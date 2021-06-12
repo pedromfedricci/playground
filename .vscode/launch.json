@@ -1,0 +1,119 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'playground'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=playground",
+                    "--package=playground"
+                ],
+                "filter": {
+                    "name": "playground",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'playground'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=playground",
+                    "--package=playground"
+                ],
+                "filter": {
+                    "name": "playground",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'iterators'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=iterators",
+                    "--package=playground"
+                ],
+                "filter": {
+                    "name": "iterators",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'iterators'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=iterators",
+                    "--package=playground"
+                ],
+                "filter": {
+                    "name": "iterators",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'closure_traits'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=closure_traits",
+                    "--package=playground"
+                ],
+                "filter": {
+                    "name": "closure_traits",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'closure_traits'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=closure_traits",
+                    "--package=playground"
+                ],
+                "filter": {
+                    "name": "closure_traits",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

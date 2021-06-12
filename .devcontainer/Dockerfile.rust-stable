@@ -1,0 +1,29 @@
+ARG RUST_IMAGE=rust:stable
+
+FROM $RUST_IMAGE AS install-sys-pkgs
+
+RUN apt-get update -y --no-install-recommends \
+    && \
+    apt-get install -y \
+    # Programming tool for memory debugging and profilling.
+    valgrind
+
+
+FROM install-sys-pkgs AS create-dev-user
+
+ARG USER=rustdev
+RUN useradd $USER --shell /bin/bash --create-home
+USER $USER
+
+
+FROM create-dev-user AS install-rust-tools
+
+RUN rustup component add \
+    rust-src \
+    rustfmt \
+    rust-docs \
+    clippy \
+    && \
+    cargo install \
+    cargo-valgrind \
+    cargo-expand
