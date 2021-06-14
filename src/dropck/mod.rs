@@ -2,6 +2,21 @@ use std::marker::PhantomData;
 
 #[cfg(test)]
 mod test;
+
+struct Inspector<'a>(&'a u8);
+
+impl<'a> Drop for Inspector<'a> {
+    fn drop(&mut self) {
+        println!("I was only {} days from retirement!", self.0);
+    }
+}
+
+pub struct World<'a> {
+    inspector: PhantomData<Inspector<'a>>,
+    _days: Box<u8>,
+    _ptr: *const Inspector<'a>,
+}
+
 struct InnerStruct<'a> {
     _marker: PhantomData<&'a ()>,
 }
@@ -54,7 +69,7 @@ impl MyStruct {
     }
 
     pub fn do_it(&self) {}
-    pub fn dot_it_mut(&mut self) {}
+    pub fn do_it_mut(&mut self) {}
 }
 
 // ###########################################################################
