@@ -38,6 +38,16 @@ path = "src/bin/drop_check.rs"
 name = "main"
 path = "src/main.rs"
 
+[[bin]]
+name = "asyncstd"
+path = "src/async_std.rs"
+
 [dependencies]
 regex = "1"
 lazy_static = "1"
+async-std = { version = "1", features = ["attributes"] }
+bytes = "1"
+tokio = { version = "1", features = ["full"] }
+rand = "*"
+uuid = { version = "0.8.2", features = ["v4"] }
+mini-redis = "*"
