@@ -1,4 +1,3 @@
-#![feature(iter_map_while)]
 #![feature(trait_alias)]
 #![feature(dropck_eyepatch)]
 #![feature(option_result_unwrap_unchecked)]
@@ -14,6 +13,7 @@ pub mod io;
 pub mod iterators;
 pub mod lifetimes;
 pub mod linked_list;
+pub mod min_slice;
 pub mod rc;
 pub mod regex;
 pub mod string;

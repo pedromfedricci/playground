@@ -38,10 +38,6 @@ path = "src/bin/drop_check.rs"
 name = "main"
 path = "src/main.rs"
 
-[[bin]]
-name = "asyncstd"
-path = "src/async_std.rs"
-
 [dependencies]
 regex = "1"
 lazy_static = "1"
