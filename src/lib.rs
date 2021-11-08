@@ -14,6 +14,7 @@ pub mod iterators;
 pub mod lifetimes;
 pub mod linked_list;
 pub mod min_slice;
+pub mod mongodb;
 pub mod rc;
 pub mod regex;
 pub mod string;

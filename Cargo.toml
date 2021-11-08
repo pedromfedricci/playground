@@ -2,9 +2,8 @@
 name = "playground"
 version = "0.1.0"
 authors = ["pedro"]
-edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+edition = "2021"
+rust-version = "1.56"
 
 [lib]
 name = "libplayground"
@@ -35,8 +34,20 @@ name = "drop_check"
 path = "src/bin/drop_check.rs"
 
 [[bin]]
+name = "find"
+path = "src/bin/find_all_in_test_coll.rs"
+
+[[bin]]
+name = "create_test_coll"
+path = "src/bin/create_test_coll.rs"
+
+[[bin]]
 name = "main"
 path = "src/main.rs"
+
+[[bench]]
+name = "find"
+harness = false
 
 [dependencies]
 regex = "1"
@@ -47,3 +58,9 @@ tokio = { version = "1", features = ["full"] }
 rand = "*"
 uuid = { version = "0.8.2", features = ["v4"] }
 mini-redis = "*"
+mongodb = "2.0.1"
+futures = { version = "0.3", default-features = false }
+itertools = { version = "0.10" }
+
+[dev-dependencies]
+criterion = { version = "0.3.5", features = ["async_tokio", "html_reports"] }
